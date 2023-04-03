@@ -118,7 +118,7 @@ while True:
         userPassword = input('Введите пароль от счета: ')
         theBalance = getBalance(userAccountNumber, userPassword)
         if theBalance is not None:
-            print('Баланс счета ', theBalance)
+            print('Баланс счета номер %d - %d' % (userAccountNumber, theBalance))
 
     elif action == 'd': # Внести депозит
         print('Внести депозит')
@@ -129,7 +129,7 @@ while True:
         userDepositAmount = int(round(float(userDepositAmount)))
         theBalance = setChangeBalance(userAccountNumber, userDepositAmount, userPassword, action)
         if theBalance is not None:
-            print('Счет пополнен. Баланс счета: ', theBalance)
+            print('Счет №%d пополнен. Баланс счета: %d' % (userAccountNumber, theBalance))
 
     elif action == 'w': # Снять наличные
         print('Снять наличные')
@@ -140,6 +140,6 @@ while True:
         userWithdrawAmount = int(round(float(userWithdrawAmount)))
         theBalance = setChangeBalance(userAccountNumber, userWithdrawAmount, userPassword, action)
         if theBalance is not None:
-            print('Наличные выданы. Баланс счета: ', theBalance)
+            print('Наличные выданы. Баланс счета №%d: %d' % (userAccountNumber, theBalance))
 
     print('Done!')
